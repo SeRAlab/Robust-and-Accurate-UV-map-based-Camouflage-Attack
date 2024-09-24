@@ -18,7 +18,7 @@ other requirements are listed in src/requirements.txt
 
 Note that, our code is based on [Yolo-V3](https://github.com/ultralytics/yolov3) implementation.
 
-Dowdload the YOLO-V3 weight from [https://github.com/ultralytics/yolov3/releases/download/v9.5.0/yolov3.pt](https://github.com/ultralytics/yolov3/releases/download/v9.5.0/yolov3.pt) and put it into src folder.
+Dowdload the YOLO-V3 weight from [here](https://github.com/ultralytics/yolov3/releases/download/v9.5.0/yolov3.pt) and put it into src folder.
 
 After train the adversarial camouflage, you can see how camouflage like with the code in src folder.
 
