@@ -28,7 +28,7 @@ The multi-weather dataset for adversarial camouflage generation can get [here](h
 ## NRP-weight:
 We offer the NRP-weight that can be used directly. It can get [here](https://pan.baidu.com/s/1iKtlv44Uq_1YcQyLH0SSlQ?pwd=e17m)
 
-car_asset folder contains some necessary file.
+
 
 ## Run:
 TO train NRP:
