@@ -40,7 +40,7 @@ python src/generate_camouflage_E2E.py
 ```
 
 ## Post-processing to get the deployable UV map:
-The output of `generate_camouflage_E2E.py` The generated camouflage is in the form of `.npy` (Our generated texture is in [here](https://github.com/SeRAlab/Robust-and-Accurate-UV-map-based-Camouflage-Attack/tree/main/src/textures/texture.npy)). To get the image of the texture, 
+The output of `generate_camouflage_E2E.py` is in the form of `.npy` (Our generated texture is in [here](https://github.com/SeRAlab/Robust-and-Accurate-UV-map-based-Camouflage-Attack/tree/main/src/textures/texture.npy)). To get the image of the texture, 
 ```bash
 python src/generate_camouflage_E2E.py --textures=texture/texture.py
 ```
