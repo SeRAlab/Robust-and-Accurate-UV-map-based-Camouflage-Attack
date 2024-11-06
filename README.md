@@ -30,23 +30,23 @@ We offer the NRP-weight that can be used directly. It can get [here](https://pan
 
 
 ## Run:
-TO train NRP:
+To train NRP:
 ```bash
 python src/NRP.py
 ```
-TO get camouflage:
+To get camouflage:
 ```bash
 python src/generate_camouflage_E2E.py
 ```
 
 ## Post-processing to get the deployable UV map:
-The output of `generate_camouflage_E2E.py` is in the form of `.npy` (Our generated texture is in [here](https://github.com/SeRAlab/Robust-and-Accurate-UV-map-based-Camouflage-Attack/tree/main/src/textures/texture.npy)). To get the image of the texture, 
+The output of `generate_camouflage_E2E.py` is in the form of `.npy` (Our generated texture is [here](https://github.com/SeRAlab/Robust-and-Accurate-UV-map-based-Camouflage-Attack/tree/main/src/textures/texture.npy)). To get the image of the texture, you can use the following script,
 ```bash
 python src/generate_camouflage_E2E.py --textures=texture/texture.py
 ```
-The image of the UV map generated with this script is show in here [src/texture_image/test/texture/model_save.png](https://github.com/SeRAlab/Robust-and-Accurate-UV-map-based-Camouflage-Attack/tree/main/texture_image/test/texture/model_save.png).
+The image of the UV map generated with this script is show in [src/texture_image/test/texture/model_save.png](https://github.com/SeRAlab/Robust-and-Accurate-UV-map-based-Camouflage-Attack/tree/main/texture_image/test/texture/model_save.png).
 
-Although the script can convert the npy file into an image texture format, it is difficult to print directly due to its fragmented root structure. Therefore, we further re-bake it in Blender to make it printable and deployable in the real world. The conversion tutorial can be found at the following link[Here](https://www.bilibili.com/video/BV1abD3YnEQW/?spm_id_from=333.999.0.0).
+Although the script can convert the npy file into an image texture format, it is difficult to print directly due to its fragmented root structure. Therefore, we further re-bake it in Blender to make it printable and deployable in the real world. The conversion tutorial can be found at [Here](https://www.bilibili.com/video/BV1abD3YnEQW/?spm_id_from=333.999.0.0). 
 
 ## TODO List
 - [ ] The instruction of deploying the UV map in Carla.
