@@ -54,7 +54,7 @@ Although the script can convert the npy file into an image texture format, it is
 ## Attack Performance Demonstration
 <video id="video" controls="" preload="none" poster="封面">
       <source id="mp4" src="[mp4格式视频](https://github.com/SeRAlab/Robust-and-Accurate-UV-map-based-Camouflage-Attack/blob/main/assets/white_vs_RAUCA.mp4)" type="video/mp4">
-</videos>
+</video>
 
 ## TODO List
 - [ ] The instruction of deploying the UV map in Carla.
