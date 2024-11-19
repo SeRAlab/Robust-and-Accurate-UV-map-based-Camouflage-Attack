@@ -52,7 +52,15 @@ The image of the UV map generated with this script is show in [src/texture_image
 Although the script can convert the npy file into an image texture format, it is difficult to print directly due to its fragmented root structure. Therefore, we further re-bake it in Blender to make it printable and deployable in the real world. The re-bake texture image can be found [Here](https://github.com/SeRAlab/Robust-and-Accurate-UV-map-based-Camouflage-Attack/blob/main/src/texture_image/test/texture/deployable_UV_map.png). The conversion tutorial can be found [Here](https://www.bilibili.com/video/BV1abD3YnEQW/?spm_id_from=333.999.0.0). 
 
 ## Attack Performance Demonstration
-<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=1804745469&bvid=BV1cb421z7UG&cid=26837388804&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
+
+Uploading freecompress-ACTIVE_VS_RAUCA (2) (1).mp4…
+
+
+
+Uploading freecompress-white_vs_RAUCA (2).mp4…
+
+
 
 ## TODO List
 - [ ] The instruction of deploying the UV map in Carla.
