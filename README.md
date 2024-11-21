@@ -1,4 +1,4 @@
-# Improved version——RAUCA-E2E
+# （News！！）Improved version: RAUCA-E2E
 Based on RAUCA, we propose a improved version of robust and accurate camouflage generation method RAUCA-E2E, the new work can be found [https://github.com/SeRAlab/RAUCA-E2E](https://github.com/SeRAlab/RAUCA-E2E).
 
 # [ICML 2024]RAUCA: A Novel Physical Adversarial Attack on Vehicle Detectors via Robust and Accurate Camouflage Generation
