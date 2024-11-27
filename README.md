@@ -68,5 +68,14 @@ https://github.com/user-attachments/assets/72490129-7dcc-4ee7-858e-caea9216e629
 
 
 
-## TODO List
-- [ ] The instruction of deploying the UV map in Carla.
+## Citation
+```bibtex
+@inproceedings{
+zhou2024rauca,
+title={{RAUCA}: A Novel Physical Adversarial Attack on Vehicle Detectors via Robust and Accurate Camouflage Generation},
+author={Jiawei Zhou and Linye Lyu and Daojing He and YU LI},
+booktitle={Forty-first International Conference on Machine Learning},
+year={2024},
+url={https://openreview.net/forum?id=pBTLGM9uWx}
+}
+```bibtex
