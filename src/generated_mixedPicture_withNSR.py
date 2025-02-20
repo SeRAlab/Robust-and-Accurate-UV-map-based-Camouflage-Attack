@@ -13,6 +13,7 @@ from utils.torch_utils import ModelEMA, select_device, intersect_dicts, torch_di
 
 import neural_renderer
 from neural_renderer.save_obj import create_texture_image
+import utils.nmr_test as nmr
 os.environ['CUDA_LAUNCH_BLOCKING'] = '1'
 #os.environ['TORCH_USE_CUDA_DSA'] = '1'
 parser = argparse.ArgumentParser()
@@ -45,7 +46,7 @@ with open(args.faces, 'r') as f:
     face_ids = f.readlines()
     for face_id in face_ids:
         if face_id != '\n':
-            texture_mask[int(face_id) - 1, :, :, :, :] = 1
+            texture_mask[int(face_id)-1, :, :, :, :] = 1
 texture_mask = torch.from_numpy(texture_mask).cuda(device=devicenumber).unsqueeze(0)
 
 
@@ -72,7 +73,21 @@ def run_cam(batch_size=BATCH_SIZE):
 
     texure_save_path=os.path.join(texture_save_texture_path,"model_save.obj")
     neural_renderer.save_obj(texure_save_path, vertices, faces, textures_adv.squeeze(0),texture_size_out=16)
+    #
+    mask_renderer = nmr.NeuralRenderer(img_size=640).to(devicenumber)
+    mask_renderer.renderer.renderer.camera_mode = "look_at"
+    mask_renderer.renderer.renderer.light_direction = [0, 0, 1]
+    mask_renderer.renderer.renderer.camera_up = [0, 0, 1]
+    mask_renderer.renderer.renderer.background_color = [1, 1, 1]
 
+    mask_renderer.renderer.renderer.eye = [2, 2, 2]
+    img=mask_renderer.forward(vertices[None, :, :], faces[None, :, :], textures_adv)
+    img = img.cpu().numpy().squeeze().transpose((1, 2, 0))
+    print(f"img.shape{img.shape}")
+    img = np.clip(img, 0, 1)
+    img = (255 * img).astype(np.uint8)
+    img = Image.fromarray(img)
+    img.save(os.path.join(texture_save_texture_path, "textur_render.png"))
 
 
 if __name__ == "__main__":
