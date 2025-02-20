@@ -1,6 +1,5 @@
 import torch
 from torch.utils.data import DataLoader
-from data_loader import MyDatasetTestAdv
 from tqdm import tqdm
 import numpy as np
 import sys
