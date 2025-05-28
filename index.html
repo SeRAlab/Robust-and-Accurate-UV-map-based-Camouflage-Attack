@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" />
+  <meta property="og:url" content="URL OF THE WEBSITE" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>RAUCA</title>
+  <link rel="icon" type="image/x-icon" href="static/images/demon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container custom-container">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">RAUCA: A Novel Physical Adversarial Attack on Vehicle Detectors via Robust and Accurate Camouflage Generation
+            </h1>
+            <div class="is-size-4 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                Jiawei Zhou<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Linye Lyu<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Daojing He<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Yu Li<sup>1*</sup>,
+              </span>
+              </div>
+
+              <div class="is-size-6 publication-authors">
+                <span class="author-block">
+                    <sup>1</sup> Harbin Institute of Technology, Shenzhen  &nbsp;
+                </span>
+                <span class="eql-cntrb"><br><sup>*</sup>Corresponding author</span>
+              </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://github.com/SeRAlab/Robust-and-Accurate-UV-map-based-Camouflage-Attack/blob/proj_page/static/RAUCA_Poster.pdf" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://pan.baidu.com/s/17LdfDcGt3aZygN84JCP46Q?pwd=ir65" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-database"></i>
+                    </span>
+                    <span>Dataset</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://github.com/SeRAlab/Robust-and-Accurate-UV-map-based-Camouflage-Attack/tree/main?tab=readme-ov-file" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2402.15853" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+
+                <br>
+                <br>
+                <div class="col-sm-12" style="text-align: center;">
+                  <h3>Table of Contents</h3>
+                  <ul style="list-style-type: none; padding: 0;">
+                    <!-- <li><a href="#banner">Introductory Video</a></li> -->
+                    <li><a href="#abstract">Abstract</a></li>
+                    <li><a href="#pipeline">Textual Supplementary Material</a></li>
+                    <li><a href="#Attack Performance Demonstration">Attack Performance Demonstration</a></li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light" id="abstract">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Adversarial camouflage is a widely used physical attack against vehicle detectors for its superiority in multi-view attack performance. One promising approach involves using differentiable neural renderers to facilitate adversarial camouflage optimization through gradient back-propagation. However, existing methods often struggle to capture environmental characteristics during the rendering process or produce adversarial textures that can precisely map to the target vehicle, resulting in suboptimal attack performance. Moreover, these approaches neglect diverse weather conditions, reducing the efficacy of generated camouflage across varying weather scenarios. To tackle these challenges, we propose a robust and accurate camouflage generation method, namely RAUCA. The core of RAUCA is a novel neural rendering component, Neural Renderer Plus (NRP), which can accurately project vehicle textures and render images with environmental characteristics such as lighting and weather. In addition, we integrate a multi-weather dataset for camouflage generation, leveraging the NRP to enhance the attack robustness. Experimental results on six popular object detectors show that RAUCA consistently outperforms existing methods in both simulation and real-world settings.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+  <!-- Paper pipline -->
+  <section class="section hero is-light" id="pipeline">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">pipeline</h2>
+          <div class="content has-text-justified">
+            <figure class="image is-4by3">
+              <img src="static/pipeline.png" alt="RAUCA pipeline">
+              <figcaption>Figure: pipeline of the RAUCA framework.</figcaption>
+            </figure>
+            <p>
+              The overview of RAUCA. First, a multi-weather dataset is created using CARLA, which includes car images, corresponding mask images, and camera angles. Then the car images are segmented using the mask images to obtain the foreground car and background images. The foreground car, together with the 3D model and the camera angle is passed through the NRP rendering component for rendering. The rendered image is then seamlessly integrated with the background. Finally, we optimize the adversarial camouflage through back-propagation with our devised loss function computed from the output of the object detector.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+  <section clas="hero is-large" id="Attack Performance Demonstration">
+    <div class="container" style="width: 100vw;">
+      <br>
+      <h2 class="title is-3 has-text-centered">Video Gallery</h2>
+      <br>
+    </div>
+  </section>
+
+
+  
+
+
+
+
+  <!-- <div class="video_2" id="video_gallery_1" style="width: 100%"> -->
+    <!-- <div class="video_wrapper">
+      <div class="video_container">
+        <video autoplay muted loop controls>
+          <source src="static/videos/adv/01.mp4" type="video/mp4">
+        </video>
+        <div class="caption">
+          <div>Realistic adversarial driving scene.</div>
+        </div>
+        <p class="has-text-centered">
+          Overtaking from the left lane
+        </p>
+      </div>
+    </div> -->
+
+
+  <div class="container is-max-desktop" style="margin-bottom: 3rem;">
+    <div style="text-align: center;">
+      <video preload="auto" poster="" autoplay controls muted loop 
+              style="display: inline-block; max-width: 100%; height: auto; border: none;">
+        <source src="static/videos/adv/white_vs_RAUCA.mp4" type="video/mp4">
+      </video>
+      <p class="has-text-centered mt-2">Comparative object detection results under YOLOv3 between Normal and RAUCA in the real world.</p>
+    </div>
+  </div>
+
+
+  <div class="container is-max-desktop" style="margin-bottom: 3rem;">
+    <div style="text-align: center;">
+      <video preload="auto" poster="" autoplay controls muted loop 
+              style="display: inline-block; max-width: 100%; height: auto; border: none;">
+        <source src="static/videos/adv/ACTIVE_VS_RAUCA.mp4" type="video/mp4">
+      </video>
+      <p class="has-text-centered mt-2">Comparative object detection results under YOLOv3 between past SOTA ACTIVE and RAUCA in the real world.</p>
+    </div>
+  </div>
+
+  
+  
+
+
+    <!-- <div class="video_wrapper">
+      <div class="video_container">
+        <video autoplay muted loop controls>
+          <source src="static/videos/adv/10.mp4" type="video/mp4">
+        </video>
+        <div class="caption">
+          <div>Realistic adversarial driving scene.</div>
+        </div>
+        <p class="has-text-centered">
+          Attempted cut-in
+        </p>
+      </div>
+    </div>
+
+    <div class="video_wrapper">
+      <div class="video_container">
+        <video autoplay muted loop controls>
+          <source src="static/videos/adv/11.mp4" type="video/mp4">
+        </video>
+        <div class="caption">
+          <div>Realistic adversarial driving scene.</div>
+        </div>
+        <p class="has-text-centered">
+          U-turn at an intersection
+        </p>
+      </div>
+    </div>
+
+    <div class="video_wrapper">
+      <div class="video_container">
+        <video autoplay muted loop controls>
+          <source src="static/videos/adv/12.mp4" type="video/mp4">
+        </video>
+        <div class="caption">
+          <div>Realistic adversarial driving scene.</div>
+        </div>
+        <p class="has-text-centered">
+          Starting from roadside and surpassing from the left lane
+        </p>
+      </div>
+    </div>
+
+    <div class="video_wrapper">
+      <div class="video_container">
+        <video autoplay muted loop controls>
+          <source src="static/videos/adv/13.mp4" type="video/mp4">
+        </video>
+        <div class="caption">
+          <div>Realistic adversarial driving scene.</div>
+        </div>
+        <p class="has-text-centered">
+          Abrupt start from a parking lot
+        </p>
+      </div>
+    </div>
+
+    <div class="video_wrapper">
+      <div class="video_container">
+        <video autoplay muted loop controls>
+          <source src="static/videos/adv/14.mp4" type="video/mp4">
+        </video>
+        <div class="caption">
+          <div>Realistic adversarial driving scene.</div>
+        </div>
+        <p class="has-text-centered">
+          Lane weaving in a traffic jam
+        </p>
+      </div>
+    </div>
+
+    <div class="video_wrapper">
+      <div class="video_container">
+        <video autoplay muted loop controls>
+          <source src="static/videos/adv/15.mp4" type="video/mp4">
+        </video>
+        <div class="caption">
+          <div>Realistic adversarial driving scene.</div>
+        </div>
+        <p class="has-text-centered">
+          Tailgating and attempted overtaking
+        </p>
+      </div>
+    </div>
+
+    <div class="video_wrapper">
+      <div class="video_container">
+        <video autoplay muted loop controls>
+          <source src="static/videos/adv/16.mp4" type="video/mp4">
+        </video>
+        <div class="caption">
+          <div>Realistic adversarial driving scene.</div>
+        </div>
+        <p class="has-text-centered">
+          Cut-in from the left lane
+        </p>
+      </div>
+    </div>
+
+    <div class="video_wrapper">
+      <div class="video_container">
+        <video autoplay muted loop controls>
+          <source src="static/videos/adv/17.mp4" type="video/mp4">
+        </video>
+        <div class="caption">
+          <div>Realistic adversarial driving scene.</div>
+        </div>
+        <p class="has-text-centered">
+          Cut-in from the left lane
+        </p>
+      </div>
+    </div>
+
+    <div class="video_wrapper">
+      <div class="video_container">
+        <video autoplay muted loop controls>
+          <source src="static/videos/adv/18.mp4" type="video/mp4">
+        </video>
+        <div class="caption">
+          <div>Realistic adversarial driving scene.</div>
+        </div>
+        <p class="has-text-centered">
+          Starting from roadside and surpassing from the left lane
+        </p>
+      </div>
+    </div>
+
+    <div class="video_wrapper">
+      <div class="video_container">
+        <video autoplay muted loop controls>
+          <source src="static/videos/adv/19.mp4" type="video/mp4">
+        </video>
+        <div class="caption">
+          <div>Realistic adversarial driving scene.</div>
+        </div>
+        <p class="has-text-centered">
+          Frontal encounter, U-turn and tailgating in the night
+        </p>
+      </div>
+    </div> -->
+    
+    
+  </div>
+
+
+
+
+
+  <!-- Image carousel -->
+  <!-- <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item">
+            <img src="static/images/carousel1.jpg" alt="MY ALT TEXT" />
+            <h2 class="subtitle has-text-centered">
+              First image description.
+            </h2>
+          </div>
+          <div class="item">
+            <img src="static/images/carousel2.jpg" alt="MY ALT TEXT" />
+            <h2 class="subtitle has-text-centered">
+              Second image description.
+            </h2>
+          </div>
+          <div class="item">
+            <img src="static/images/carousel3.jpg" alt="MY ALT TEXT" />
+            <h2 class="subtitle has-text-centered">
+              Third image description.
+            </h2>
+          </div>
+          <div class="item">
+            <img src="static/images/carousel4.jpg" alt="MY ALT TEXT" />
+            <h2 class="subtitle has-text-centered">
+              Fourth image description.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!-- End image carousel -->
+
+
+
+
+  <!-- Youtube video -->
+  <!-- <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Video Presentation</h2>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+
+            <div class="publication-video">
+              <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!-- End youtube video -->
+
+
+  <!-- Video carousel -->
+  <!-- <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Another Carousel</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-video1">
+            <video poster="" id="video1" autoplay controls muted loop height="100%">
+              <source src="static/videos/carousel1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video2">
+            <video poster="" id="video2" autoplay controls muted loop height="100%">
+              <source src="static/videos/carousel2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video3">
+            <video poster="" id="video3" autoplay controls muted loop height="100%">\
+              <source src="static/videos/carousel3.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!-- End video carousel -->
+
+
+
+
+
+
+  <!-- Paper poster -->
+  <!-- <section class="hero is-small is-light" id="text_supp">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title has-text-centered">Textual Supplementary Material</h2>
+
+        <iframe src="supp.pdf" width="100%" height="550">
+        </iframe>
+
+      </div>
+    </div>
+  </section> -->
+  <!--End paper poster -->
+
+
+  <!--BibTex citation -->
+  <!-- <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>BibTex Code Here</code></pre>
+    </div>
+  </section> -->
+  <!--End BibTex citation -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the source code of this website, we just ask that you link back to this page in the
+              footer. <br> This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+  <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
