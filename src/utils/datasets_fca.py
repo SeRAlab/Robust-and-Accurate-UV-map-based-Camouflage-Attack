@@ -21,7 +21,7 @@ from tqdm import tqdm
 from utils.general import xywhn2xyxy, segments2boxes,  xyxy2xywhn
 from utils.torch_utils import torch_distributed_zero_first
 import utils.nmr_test as nmr
-
+import time
 # Parameters
 help_url = 'https://github.com/ultralytics/yolov3/wiki/Train-Custom-Data'
 img_formats = ['bmp', 'jpg', 'jpeg', 'png', 'tif', 'tiff', 'dng', 'webp', 'mpo']  # acceptable image suffixes
@@ -341,8 +341,10 @@ class LoadImagesAndLabels(Dataset):  # for training/testing
         # # Image.fromarray(np.uint8(255 * imgs_pred.squeeze().cpu().data.numpy().transpose(1, 2, 0))).show()
         
         # imgs_ref = imgs_ref / torch.max(imgs_ref)
-
+        rendering_start_time = time.time()
         imgs_pred = self.mask_renderer.forward(self.vertices_var, self.faces_var, self.textures)#再根据物体的片图结合之前输入的角度和距离信息就可以得到imgs_pred
+        rendering_time = time.time() - rendering_start_time
+
         # Image.fromarray(np.uint8(255 * imgs_pred.squeeze().cpu().data.numpy().transpose(1, 2, 0))).show()
         
         imgs_pred = imgs_pred / torch.max(imgs_pred)
@@ -384,16 +386,16 @@ class LoadImagesAndLabels(Dataset):  # for training/testing
         imgs_pred=mask*imgs_pred
         
         # return img.squeeze(0), imgs_pred.squeeze(0), mask, imgs_ref.squeeze(0),img_cut.squeeze(0),labels_out, self.img_files[index], shapes
-        return img.squeeze(0), imgs_pred.squeeze(0), mask,img_cut.squeeze(0),labels_out, self.img_files[index], shapes
+        return img.squeeze(0), imgs_pred.squeeze(0), mask,img_cut.squeeze(0),labels_out, self.img_files[index], shapes, rendering_time
 
 
 
     @staticmethod
     def collate_fn(batch):
-        img, texture_img, masks,img_cut, label, path, shapes = zip(*batch)  # transposed
+        img, texture_img, masks,img_cut, label, path, shapes,rendering_times = zip(*batch)  # transposed
         for i, l in enumerate(label):
             l[:, 0] = i  # add target image index for build_targets()
-        return torch.stack(img, 0), torch.stack(texture_img, 0),torch.stack(masks, 0), torch.stack(img_cut, 0),torch.cat(label, 0), path, shapes
+        return torch.stack(img, 0), torch.stack(texture_img, 0),torch.stack(masks, 0), torch.stack(img_cut, 0),torch.cat(label, 0), path, shapes, torch.tensor(rendering_times)
 
     @staticmethod
     def collate_fn4(batch):
