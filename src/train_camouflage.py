@@ -13,14 +13,14 @@ from torch.utils.tensorboard import SummaryWriter
 from tqdm import tqdm
 from PIL import Image, ImageDraw
 from models.yolo import Model
-from utils.datasets_fca import create_dataloader
-from utils.general_fca import labels_to_class_weights, increment_path, labels_to_image_weights, init_seeds, \
+from utils.datasets_RAUCA import create_dataloader
+from utils.general_RAUCA import labels_to_class_weights, increment_path, labels_to_image_weights, init_seeds, \
      get_latest_run, check_dataset, check_file, check_git_status, check_img_size, \
     check_requirements, set_logging, colorstr
 from utils.google_utils import attempt_download
-from utils.loss_fca_new import ComputeLoss
+from utils.loss_RAUCA import ComputeLoss
 from utils.torch_utils import ModelEMA, select_device, intersect_dicts, torch_distributed_zero_first, de_parallel
-from utils.wandb_logging.wandb_utils import WandbLogger, check_wandb_resume
+# from utils.wandb_logging.wandb_utils import WandbLogger, check_wandb_resume
 import neural_renderer
 from PIL import Image
 from Image_Segmentation.network import U_Net
@@ -93,7 +93,7 @@ with torch.autograd.set_detect_anomaly(True):
                 texture_param = texture_param * 3
             elif opt.patchInitial=="origin":
                 texture_param=texture_origin.clone().cpu().numpy()
-        print(texture_param)
+        # print(texture_param)
         texture_param = torch.autograd.Variable(torch.from_numpy(texture_param).to(device), requires_grad=True) 
         optim = torch.optim.Adam([texture_param], lr=opt.lr)
         texture_mask = np.zeros((faces.shape[0], texture_size, texture_size, texture_size, 3), 'int8')
@@ -130,11 +130,11 @@ with torch.autograd.set_detect_anomaly(True):
         if rank in [-1, 0]:
             opt.hyp = hyp  # add hyperparameters
             run_id = torch.load(weights).get('wandb_id') if weights.endswith('.pt') and os.path.isfile(weights) else None
-            wandb_logger = WandbLogger(opt, save_dir.stem, run_id, data_dict)
-            loggers['wandb'] = wandb_logger.wandb
-            data_dict = wandb_logger.data_dict
-            if wandb_logger.wandb:
-                weights, epochs, hyp = opt.weights, opt.epochs, opt.hyp  # WandbLogger might update weights, epochs if resuming
+            # wandb_logger = WandbLogger(opt, save_dir.stem, run_id, data_dict)
+            # loggers['wandb'] = wandb_logger.wandb
+            # data_dict = wandb_logger.data_dict
+            # if wandb_logger.wandb:
+            #     weights, epochs, hyp = opt.weights, opt.epochs, opt.hyp  # WandbLogger might update weights, epochs if resuming
 
         nc = 1 if opt.single_cls else int(data_dict['nc'])  # number of classes
         names = ['item'] if opt.single_cls and len(data_dict['names']) != 1 else data_dict['names']  # class names
@@ -397,18 +397,18 @@ with torch.autograd.set_detect_anomaly(True):
         parser = argparse.ArgumentParser()
         # hyperparameter for training adversarial camouflage
         # ------------------------------------#
-        parser.add_argument('--weights', type=str, default='yolov3.pt', help='initial weights path')
+        parser.add_argument('--weights', type=str, default='yolov3_9_5.pt', help='initial weights path')
         parser.add_argument('--cfg', type=str, default='', help='model.yaml path')
         parser.add_argument('--data', type=str, default='data/carla.yaml', help='data.yaml path')
         parser.add_argument('--lr', type=float, default=0.01, help='learning rate for texture_param')
         parser.add_argument('--obj_file', type=str, default='car_assets/audi_et_te.obj', help='3d car model obj') #3D车模
         parser.add_argument('--faces', type=str, default='car_assets/exterior_face.txt',
                             help='exterior_face file  (exterior_face, all_faces)')
-        parser.add_argument('--datapath', type=str, default='/data/zhoujw/phy_attack',
+        parser.add_argument('--datapath', type=str, default='/home/zjw/data/car_train_total_no_paper/adversarialtrain',
                             help='data path')
-        parser.add_argument('--patchInitial', type=str, default='random',
+        parser.add_argument('--patchInitial', type=str, default='random_right',
                             help='data path')
-        parser.add_argument('--device', default='', help='cuda device, i.e. 0 or 0,1,2,3 or cpu')
+        parser.add_argument('--device', default='0', help='cuda device, i.e. 0 or 0,1,2,3 or cpu')
         parser.add_argument("--lamb", type=float, default=1e-4) #lambda
         parser.add_argument("--d1", type=float, default=0.9)
         parser.add_argument("--d2", type=float, default=0.1)
@@ -482,16 +482,16 @@ with torch.autograd.set_detect_anomaly(True):
         opt.global_rank = int(os.environ['RANK']) if 'RANK' in os.environ else -1
         print('WORLD_SIZE' in os.environ)
         set_logging(opt.global_rank)
-        if opt.global_rank in [-1, 0]:
-            check_git_status()   
-            check_requirements(exclude=('pycocotools', 'thop'))
+        # if opt.global_rank in [-1, 0]:
+        #     check_git_status()   
+        #     check_requirements(exclude=('pycocotools', 'thop'))
 
         
 
 
 
         # Resume
-        wandb_run = check_wandb_resume(opt)
+        # wandb_run = check_wandb_resume(opt)
         if opt.resume and not wandb_run:  # resume an interrupted run   ``
             ckpt = opt.resume if isinstance(opt.resume, str) else get_latest_run()  # specified or most recent path
             assert os.path.isfile(ckpt), 'ERROR: --resume checkpoint does not exist'
