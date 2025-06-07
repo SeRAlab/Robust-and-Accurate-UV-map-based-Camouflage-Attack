@@ -17,11 +17,28 @@ Adversarial camouflage is a widely used physical attack against vehicle detector
 The overview of RAUCA. First, a multi-weather dataset is created using CARLA, which includes car images, corresponding mask images, and camera angles. Then the car images are segmented using the mask images to obtain the foreground car and background images. The foreground car, together with the 3D model and the camera angle is passed through the NRP rendering component for rendering. The rendered image is then seamlessly integrated with the background. Finally, we optimize the adversarial camouflage through back-propagation with our devised loss function computed from the output of the object detector.
 
 ## Requirements:
-before you running the code, you must install the `neural renderer` python package. You can pull FCA's implementation [here](https://github.com/winterwindwang/neural_renderer), which is slight different to daniilidis.
 
-other requirements are listed in src/requirements.txt
+#### Setup
 
-Note that, our code is based on [Yolo-V3](https://github.com/ultralytics/yolov3) implementation.
+```
+conda create -n RAUCA python=3.9
+conda activate RAUCA
+cd src
+git clone https://github.com/winterwindwang/neural_renderer.git
+conda create -n RAUCA python=3.9
+conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 pytorch-cuda=11.8 -c pytorch -c nvidia
+cd /home/zjw/Robust-and-Accurate-UV-map-based-Camouflage-Attack/src/neural_renderer
+#install neural_renderer, if meet bugs can search guide in [here](https://winterwindwang.github.io/2021/07/22/nerual_rendered_build.html)
+sudo apt install ninja-build
+python setup.py install
+ninja -f  build/temp.linux-x86_64-cpython-39/build.ninja
+python setup.py install
+ninja -f  build/temp.linux-x86_64-cpython-39/build.ninja
+python setup.py install
+ninja -f  build/temp.linux-x86_64-cpython-39/build.ninja
+python setup.py install
+conda env update --file environment.yml
+```
 
 Dowdload the YOLO-V3 weight from [here](https://github.com/ultralytics/yolov3/releases/download/v9.5.0/yolov3.pt) and put it into src folder.
 
