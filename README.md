@@ -46,6 +46,7 @@ After train the adversarial camouflage, you can see how camouflage like with the
 
 ## Dataset:
 The multi-weather dataset for adversarial camouflage generation can get [here](https://pan.baidu.com/s/17LdfDcGt3aZygN84JCP46Q?pwd=ir65)
+Update path in src/data/carla.yaml.
 
 ## NRP-weight:
 We offer the NRP-weight that can be used directly. It can get [here](https://pan.baidu.com/s/1iKtlv44Uq_1YcQyLH0SSlQ?pwd=e17m)
@@ -58,13 +59,13 @@ python NRP_training.py
 ```
 To get camouflage:
 ```bash
-python train_camouflage.py
+python train_camouflage.py --datapath {datapath}
 ```
 
 ## Post-processing to get the deployable UV map:
 The output of `generate_camouflage_E2E.py` is in the form of `.npy` (Our generated texture is [here](https://github.com/SeRAlab/Robust-and-Accurate-UV-map-based-Camouflage-Attack/tree/main/src/textures/texture.npy)). To get the image of the texture, you can use the following script,
 ```bash
-python src/generated_mixedPicture_withNSR.py --textures=texture/texture.py
+python generated_mixedPicture_withNSR.py --textures=texture/texture.npy
 ```
 The image of the UV map generated with this script is show in [src/texture_image/test/texture/model_save.png](https://github.com/SeRAlab/Robust-and-Accurate-UV-map-based-Camouflage-Attack/tree/main/texture_image/test/texture/model_save.png).
 
