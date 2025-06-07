@@ -37,11 +37,11 @@ We offer the NRP-weight that can be used directly. It can get [here](https://pan
 ## Run:
 To train NRP:
 ```bash
-python src/NRP_training.py
+python NRP_training.py
 ```
 To get camouflage:
 ```bash
-python src/generated_mixedPicture_withNSR.py
+python train_camouflage.py
 ```
 
 ## Post-processing to get the deployable UV map:
