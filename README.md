@@ -24,7 +24,7 @@ The overview of RAUCA. First, a multi-weather dataset is created using CARLA, wh
 conda create -n RAUCA python=3.9
 conda activate RAUCA
 cd src
-git clone https://github.com/winterwindwang/neural_renderer.git
+git clone https://github.com/zhoujiawei3/Neural_Renderer_RAUCA.git
 conda create -n RAUCA python=3.9
 conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 pytorch-cuda=11.8 -c pytorch -c nvidia
 cd /home/zjw/Robust-and-Accurate-UV-map-based-Camouflage-Attack/src/neural_renderer
@@ -37,19 +37,19 @@ ninja -f  build/temp.linux-x86_64-cpython-39/build.ninja
 python setup.py install
 ninja -f  build/temp.linux-x86_64-cpython-39/build.ninja
 python setup.py install
+cd ..
 conda env update --file environment.yml
 ```
 
-Dowdload the YOLO-V3 weight from [here](https://github.com/ultralytics/yolov3/releases/download/v9.5.0/yolov3.pt) and put it into src folder.
+Dowdload the YOLO-V3 weight from [here](https://github.com/ultralytics/yolov3/releases/download/v9.5.0/yolov3.pt). Put it into `src` folder and rename it to `yolov3_9_5.pt`
 
-After train the adversarial camouflage, you can see how camouflage like with the code in src folder.
-
+After train the adversarial camouflage, you can see how camouflage like with the code in `src` folder.
 ## Dataset:
 The multi-weather dataset for adversarial camouflage generation can get [here](https://pan.baidu.com/s/17LdfDcGt3aZygN84JCP46Q?pwd=ir65)
 Update path in src/data/carla.yaml.
 
 ## NRP-weight:
-We offer the NRP-weight that can be used directly. It can get [here](https://pan.baidu.com/s/1iKtlv44Uq_1YcQyLH0SSlQ?pwd=e17m)
+We offer the NRP-weight that can be used directly. It can get [here](https://pan.baidu.com/s/1iKtlv44Uq_1YcQyLH0SSlQ?pwd=e17m). Put it into 'src/NRP_weights/' folder.
 
 
 ## Run:
