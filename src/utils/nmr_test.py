@@ -24,8 +24,8 @@ def convert_as(src, trg):
 
 # get_params(((-25, 16, 20), (-45, 180, 0)), ((-45, 3, 0.8), (0, 0, 0)))  # test example
 def get_params(carlaTcam, carlaTveh):  # carlaTcam: tuple of 2*3
-    #scale = 0.39
-    scale=0.0592
+    scale = 0.39
+    # scale=0.0592
     # scale = 0.38
     # calc eye
     eye = [0, 0, 0]
