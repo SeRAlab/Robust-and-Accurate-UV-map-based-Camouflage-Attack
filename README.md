@@ -27,7 +27,7 @@ cd src
 git clone https://github.com/zhoujiawei3/Neural_Renderer_RAUCA.git
 conda create -n RAUCA python=3.9
 conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 pytorch-cuda=11.8 -c pytorch -c nvidia
-cd /home/zjw/Robust-and-Accurate-UV-map-based-Camouflage-Attack/src/neural_renderer
+cd neural_renderer_RAUCA
 #install neural_renderer, if meet bugs can search guide in [here](https://winterwindwang.github.io/2021/07/22/nerual_rendered_build.html)
 sudo apt install ninja-build
 python setup.py install
