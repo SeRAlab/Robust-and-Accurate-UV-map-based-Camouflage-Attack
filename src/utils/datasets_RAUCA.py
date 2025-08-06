@@ -388,7 +388,7 @@ class LoadImagesAndLabels(Dataset):  # for training/testing
 
     @staticmethod
     def collate_fn(batch):
-        img, texture_img, masks,img_cut, label, path, shapes, rendering_times = zip(*batch)  # transposed
+        img, texture_img, masks,img_cut, label, path, shapes = zip(*batch)  # transposed
         for i, l in enumerate(label):
             l[:, 0] = i  # add target image index for build_targets()
         return torch.stack(img, 0), torch.stack(texture_img, 0),torch.stack(masks, 0), torch.stack(img_cut, 0),torch.cat(label, 0), path, shapes
