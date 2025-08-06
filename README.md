@@ -45,11 +45,11 @@ Dowdload the YOLO-V3 weight from [here](https://github.com/ultralytics/yolov3/re
 
 After train the adversarial camouflage, you can see how camouflage like with the code in `src` folder.
 ## Dataset:
-The multi-weather dataset for adversarial camouflage generation can get [here](https://pan.baidu.com/s/17LdfDcGt3aZygN84JCP46Q?pwd=ir65)
-Update path in src/data/carla.yaml.
+The multi-weather dataset for adversarial camouflage generation can get [here](https://pan.baidu.com/s/17LdfDcGt3aZygN84JCP46Q?pwd=ir65).
+Update path in `src/data/carla.yaml`.
 
 ## NRP-weight:
-We offer the NRP-weight that can be used directly. It can get [here](https://pan.baidu.com/s/1iKtlv44Uq_1YcQyLH0SSlQ?pwd=e17m). Put it into 'src/NRP_weights/' folder.
+We offer the NRP-weight that can be used directly. It can get [here](https://pan.baidu.com/s/1iKtlv44Uq_1YcQyLH0SSlQ?pwd=e17m). Put it into `src/NRP_weights/` folder.
 
 
 ## Run:
