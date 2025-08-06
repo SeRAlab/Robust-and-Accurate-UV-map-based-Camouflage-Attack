@@ -236,7 +236,7 @@ with torch.autograd.set_detect_anomaly(True):
         # ---------------------------------#
         model_nsr=U_Net()
         
-        saved_state_dict = torch.load('./NRP_weights/nrp.pth')  #
+        saved_state_dict = torch.load('./NRP_weights/NRP_weight.pth')  #
         new_state_dict = {}
         for k, v in saved_state_dict.items():
             name = k[7:] 
@@ -404,7 +404,7 @@ with torch.autograd.set_detect_anomaly(True):
         parser.add_argument('--obj_file', type=str, default='car_assets/audi_et_te.obj', help='3d car model obj') #3D车模
         parser.add_argument('--faces', type=str, default='car_assets/exterior_face.txt',
                             help='exterior_face file  (exterior_face, all_faces)')
-        parser.add_argument('--datapath', type=str, default='/home/zjw/data/car_train_total_no_paper/adversarialtrain',
+        parser.add_argument('--datapath', type=str, default='{datapath}',
                             help='data path')
         parser.add_argument('--patchInitial', type=str, default='random_right',
                             help='data path')
