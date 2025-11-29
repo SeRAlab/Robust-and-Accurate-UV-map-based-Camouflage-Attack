@@ -71,6 +71,8 @@ The image of the UV map generated with this script is show in [src/texture_image
 
 Although the script can convert the npy file into an image texture format, it is difficult to print directly due to its fragmented root structure. Therefore, we further re-bake it in Blender to make it printable and deployable in the real world. The re-bake texture image can be found [Here](https://github.com/SeRAlab/Robust-and-Accurate-UV-map-based-Camouflage-Attack/blob/main/src/texture_image/test/texture/deployable_UV_map.png). The conversion tutorial can be found [Here](https://www.bilibili.com/video/BV1abD3YnEQW/?spm_id_from=333.999.0.0). 
 
+Some additional examples about working with 3D mesh and Carla can be found here [Here](https://wood-amphibian-4fc.notion.site/3D-mesh-2a8c47c71a1680c189e3f34bcf48346e).
+
 ## Attack Performance Demonstration
 
 https://github.com/user-attachments/assets/3abeaa66-e488-4e13-a331-53d7fbb30666
